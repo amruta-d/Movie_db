@@ -16,28 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `award`
+-- Table structure for table `person`
 --
 
-DROP TABLE IF EXISTS `award`;
+DROP TABLE IF EXISTS `person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `award` (
-  `award_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `award_name` char(255) DEFAULT NULL,
-  `award_genre` char(200) DEFAULT NULL,
-  `award_year` int(11) DEFAULT NULL,
-  PRIMARY KEY (`award_id`)
+CREATE TABLE `person` (
+  `person_id` int(11) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `middle_name` varchar(255) DEFAULT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `dob` date NOT NULL,
+  `birth_place` varchar(255) DEFAULT NULL,
+  `current_residence` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `active_status` varchar(255) DEFAULT NULL,
+  `marital_status` varchar(255) DEFAULT NULL,
+  `spouse_name` varchar(255) DEFAULT NULL,
+  `gender` char(20) NOT NULL,
+  PRIMARY KEY (`person_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `award`
+-- Dumping data for table `person`
 --
 
-LOCK TABLES `award` WRITE;
-/*!40000 ALTER TABLE `award` DISABLE KEYS */;
-/*!40000 ALTER TABLE `award` ENABLE KEYS */;
+LOCK TABLES `person` WRITE;
+/*!40000 ALTER TABLE `person` DISABLE KEYS */;
+/*!40000 ALTER TABLE `person` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

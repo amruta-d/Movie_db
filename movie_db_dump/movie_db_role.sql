@@ -16,28 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `award`
+-- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `award`;
+DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `award` (
-  `award_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `award_name` char(255) DEFAULT NULL,
-  `award_genre` char(200) DEFAULT NULL,
-  `award_year` int(11) DEFAULT NULL,
-  PRIMARY KEY (`award_id`)
+CREATE TABLE `role` (
+  `role_id` int(11) NOT NULL,
+  `role_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `award`
+-- Dumping data for table `role`
 --
 
-LOCK TABLES `award` WRITE;
-/*!40000 ALTER TABLE `award` DISABLE KEYS */;
-/*!40000 ALTER TABLE `award` ENABLE KEYS */;
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
