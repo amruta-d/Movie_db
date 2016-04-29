@@ -16,36 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `movie`
+-- Table structure for table `movie_genre`
 --
 
-DROP TABLE IF EXISTS `movie`;
+DROP TABLE IF EXISTS `movie_genre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `movie` (
-  `movie_id` int(10) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
-  `release_year` int(5) DEFAULT NULL,
-  `release_date` date DEFAULT NULL,
-  `photos` varchar(255) DEFAULT NULL,
-  `videos` varchar(255) DEFAULT NULL,
-  `imdb_rating` decimal(2,1) DEFAULT NULL,
-  `rotten_tomatoes_critics_rating` decimal(2,1) DEFAULT NULL,
-  `movie_language` char(255) DEFAULT NULL,
-  `country` char(255) DEFAULT NULL,
-  `pgr` varchar(100) DEFAULT NULL,
-  `duration` double DEFAULT NULL,
-  PRIMARY KEY (`movie_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `movie_genre` (
+  `movie_genre_id` int(11) NOT NULL,
+  `movie_id` int(11) NOT NULL,
+  `genre_id` int(11) NOT NULL,
+  PRIMARY KEY (`movie_genre_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `movie`
+-- Dumping data for table `movie_genre`
 --
 
-LOCK TABLES `movie` WRITE;
-/*!40000 ALTER TABLE `movie` DISABLE KEYS */;
-/*!40000 ALTER TABLE `movie` ENABLE KEYS */;
+LOCK TABLES `movie_genre` WRITE;
+/*!40000 ALTER TABLE `movie_genre` DISABLE KEYS */;
+/*!40000 ALTER TABLE `movie_genre` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-28 18:08:40
+-- Dump completed on 2016-04-28 18:08:39
