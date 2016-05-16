@@ -30,13 +30,11 @@ CREATE TABLE `movie` (
   `photos` varchar(255) DEFAULT NULL,
   `videos` varchar(255) DEFAULT NULL,
   `imdb_rating` decimal(2,1) DEFAULT NULL,
-  `rotten_tomatoes_critics_rating` decimal(2,1) DEFAULT NULL,
   `movie_language` char(255) DEFAULT NULL,
   `country` char(255) DEFAULT NULL,
-  `pgr` varchar(100) DEFAULT NULL,
   `duration` double DEFAULT NULL,
   PRIMARY KEY (`movie_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,6 +43,7 @@ CREATE TABLE `movie` (
 
 LOCK TABLES `movie` WRITE;
 /*!40000 ALTER TABLE `movie` DISABLE KEYS */;
+INSERT INTO `movie` VALUES (1,'Whiplash',2014,'2014-10-10','','',8.4,'en','United States of America',105),(2,'The Shawshank Redemption',1994,'1994-09-10','','',8.3,'en','United States of America',142),(3,'The Godfather',1972,'1972-03-15','','',8.2,'en','United States of America',175),(4,'Interstellar',2014,'2014-11-05','','',8.2,'en','Canada, United States of America, United Kingdom',169),(5,'Paperman',2012,'2012-11-02','','',8.1,'en','United States of America',7),(6,'Intouchables',2011,'2011-11-02','','',8.1,'fr','France',112),(7,'Room',2015,'2015-10-16','','',8.1,'en','Canada, Ireland',117),(8,'Spirited Away',2001,'2001-07-20','','',8.1,'ja','Japan',125),(9,'Grave of the Fireflies',1988,'1988-04-16','','',8.1,'ja','Japan',89),(10,'Life Is Beautiful',1997,'1997-12-20','','',8.1,'it','Italy',116),(11,'Presto',2008,'2008-06-18','','',8.1,'en','United States of America',5),(12,'Feast',2014,'2014-11-07','','',8.1,'en','United States of America',6),(13,'Princess Mononoke',1997,'1997-07-12','','',8.1,'ja','Japan',134),(14,'The Godfather: Part II',1974,'1974-12-20','','',8.1,'en','United States of America',200),(15,'Inside Out',2015,'2015-06-09','','',8.0,'en','United States of America',94),(16,'Guardians of the Galaxy',2014,'2014-07-30','','',8.0,'en','United Kingdom, United States of America',121),(17,'The Dark Knight',2008,'2008-07-16','','',8.0,'en','United Kingdom, United States of America',152),(18,'Fight Club',1999,'1999-10-14','','',8.0,'en','Germany, United States of America',139),(19,'Schindler\'s List',1993,'1993-11-29','','',8.0,'en','United States of America',195),(20,'12 Angry Men',1957,'1957-03-25','','',8.0,'en','United States of America',96),(21,'Captain America: Civil War',2016,'2016-04-27','','',6.9,'en','United States of America',146);
 /*!40000 ALTER TABLE `movie` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-28 18:08:40
+-- Dump completed on 2016-05-16  0:08:55
