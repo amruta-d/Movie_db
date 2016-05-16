@@ -13,7 +13,7 @@ $product = new Data($db);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data CRUD PDO</title>
+    <title>Add New Movie to Movie Database</title>
  
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@ $product = new Data($db);
 </p>
     <div class="container">
       <p>
- <a class="btn btn-primary" href="index.php" role="button">Back View Data</a>
+ <a class="btn btn-primary" href="test3.php" role="button">Back View Data</a>
       </p>
  
 <?php
@@ -74,31 +74,31 @@ if($_POST){
   </div>
   <div class="form-group">
     <label for="date">Release Date</label>
-    <textarea class="form-control"  id="date" name="date"></textarea>
+    <input type="text" class="form-control" id="date" name="date">
   </div>
     <div class="form-group">
     <label for="photos">Photos</label>
-    <textarea class="form-control"  id="photos" name="photos"></textarea>
+    <input type="text" class="form-control" id="photos" name="photos">
   </div>
     <div class="form-group">
     <label for="videos">Videos</label>
-    <textarea class="form-control"  id="videos" name="videos"></textarea>
+    <input type="text" class="form-control" id="videos" name="videos">
   </div>
     <div class="form-group">
     <label for="rating">Rating</label>
-    <textarea class="form-control"  id="rating" name="rating"></textarea>
+    <input type="text" class="form-control"  id="rating" name="rating">
   </div>
     <div class="form-group">
     <label for="language">Language</label>
-    <textarea class="form-control"  id="language" name="language"></textarea>
+    <input type="text" class="form-control"  id="language" name="language">
   </div>
     <div class="form-group">
     <label for="country">Country</label>
-    <textarea class="form-control"  id="country" name="country"></textarea>
+    <input type="text" class="form-control"  id="country" name="country">
   </div>
     <div class="form-group">
     <label for="duration">Duration</label>
-    <textarea class="form-control"  id="duration" name="duration"></textarea>
+    <input type="text" class="form-control" id="duration" name="duration">
   </div>
   <button type="submit" class="btn btn-success">Submit</button>
 </form>
