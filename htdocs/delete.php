@@ -1,3 +1,4 @@
+<?php
 // check if value was posted
 // include database and object file
  include_once 'includes/config.php';
@@ -15,7 +16,7 @@
   
  // delete the product
  if($product->delete()){
-  echo "<script>location.href='index.php'</script>";
+  echo "<script>location.href='test3.php'</script>";
  }
   
  // if unable to delete the product

@@ -18,7 +18,7 @@ $product->readOne();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data CRUD PDO</title>
+    <title>Edit Movie Information</title>
  
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,14 +41,19 @@ $product->readOne();
 <?php
 if($_POST){
  
- $product->nm = $_POST['nm'];
- $product->gd = $_POST['gd'];
- $product->tl = $_POST['tl'];
- $product->ar = $_POST['ar'];
+ $product->title = $_POST['title'];
+ $product->year = $_POST['year'];
+ $product->date = $_POST['date'];
+ $product->photos = $_POST['photos'];
+ $product->videos = $_POST['videos'];
+ $product->rating = $_POST['rating'];
+ $product->language = $_POST['language'];
+ $product->country = $_POST['country'];
+ $product->duration = $_POST['duration'];
   
  if($product->update()){
 ?>
-<script>window.location.href='index.php'</script>
+<script>window.location.href='test3.php'</script>
 <?php
  }else{
 ?>
@@ -62,20 +67,40 @@ if($_POST){
 ?>
 <form method="post">
   <div class="form-group">
-    <label for="nm">Name</label>
-    <input type="text" class="form-control" id="nm" name="nm" value='<?php echo $product->nm; ?>'>
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value='<?php echo $product->title; ?>'>
   </div>
   <div class="form-group">
-    <label for="gd">Gender</label>
-    <input type="text" class="form-control" id="gd" name="gd" value='<?php echo $product->gd; ?>'>
+    <label for="year">Release Year</label>
+    <input type="text" class="form-control" id="year" name="year" value='<?php echo $product->year; ?>'>
   </div>
   <div class="form-group">
-    <label for="tl">Phone</label>
-    <input type="text" class="form-control" id="tl" name="tl" value='<?php echo $product->tl; ?>'>
+    <label for="date">Release Date</label>
+    <input type="text" class="form-control" id="date" name="date" value='<?php echo $product->date; ?>'>
   </div>
   <div class="form-group">
-    <label for="ar">Alamat</label>
-    <textarea class="form-control" rows="3" id="ar" name="ar"><?php echo $product->ar; ?></textarea>
+    <label for="photos">Photos</label>
+    <textarea class="form-control" rows="2" id="photos" name="photos"><?php echo $product->photos; ?></textarea>
+  </div>
+  <div class="form-group">
+    <label for="videos">Videos</label>
+    <textarea class="form-control" rows="2" id="videos" name="videos"><?php echo $product->videos; ?></textarea>
+  </div>
+  <div class="form-group">
+    <label for="rating">Rating</label>
+    <input type="text" class="form-control" id="rating" name="rating" value='<?php echo $product->rating; ?>'>
+  </div>
+  <div class="form-group">
+    <label for="language">Language</label>
+    <input type="text"  class="form-control" id="language" name="language" value='<?php echo $product->language; ?>'>
+  </div>
+  <div class="form-group">
+    <label for="country">Country</label>
+    <input type="text"  class="form-control" id="country" name="country" value='<?php echo $product->country; ?>'>
+  </div>
+  <div class="form-group">
+    <label for="duration">Duration</label>
+    <input type="text"  class="form-control" id="duration" name="duration" value='<?php echo $product->duration; ?>'>
   </div>
   <button type="submit" class="btn btn-success">Submit</button>
 </form>

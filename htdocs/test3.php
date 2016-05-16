@@ -46,7 +46,7 @@ $num = $stmt->rowCount();
 if($num>0){
 ?>
  <table class="table table-bordered table-hover table-striped">
- <caption>Ini adalah data biodata anda</caption>
+ <caption>All movies in our Movie Database</caption>
  <thead>
   <tr>
 		  <th>Movie Id</th>
@@ -54,6 +54,11 @@ if($num>0){
           <th>Release Year</th>
           <th>Release Date</th>
           <th>Photos</th>
+          <th>Videos</th>
+		  <th>Rating</th>
+		  <th>Language</th>
+		  <th>Country</th>
+		  <th>Duration</th>
         </tr>
  </thead>
  <tbody>
@@ -67,6 +72,11 @@ extract($row);
  <?php echo "<td>{$release_year}</td>" ?>
  <?php echo "<td>{$release_date}</td>" ?>
  <?php echo "<td>{$photos}</td>" ?>
+ <?php echo "<td>{$videos}</td>" ?>
+ <?php echo "<td>{$imdb_rating}</td>" ?>
+ <?php echo "<td>{$movie_language}</td>" ?>
+ <?php echo "<td>{$country}</td>" ?>
+ <?php echo "<td>{$duration}</td>" ?>
  <?php echo "<td width='100px'>
      <a class='btn btn-warning btn-sm' href='update.php?id={$movie_id}' role='button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
      <a class='btn btn-danger btn-sm' href='delete.php?id={$movie_id}' role='button'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>

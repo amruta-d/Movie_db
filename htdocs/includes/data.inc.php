@@ -6,6 +6,7 @@ class Data{
  private $table_name = "movie";
   
  // object properties
+ public $id;
  public $title;
  public $year;
  public $date;
@@ -25,7 +26,7 @@ class Data{
  function create(){
    
   //write query
-  $query = "INSERT INTO " . $this->table_name . " values('',?,?,?,?,?,?,?,?,?)";
+  $query = "INSERT INTO " . $this->table_name . "(movie_id,title,release_year,release_date,photos,videos,imdb_rating,movie_language,country,duration) " . " values('',?,?,?,?,?,?,?,?,?)";
    
   $stmt = $this->conn->prepare($query);
  
@@ -100,6 +101,12 @@ class Data{
   $this->title = $row['title'];
   $this->year = $row['release_year'];
   $this->date = $row['release_date'];
+  $this->photos = $row['photos'];
+  $this->videos = $row['videos'];
+  $this->rating = $row['imdb_rating'];
+  $this->language = $row['movie_language'];
+  $this->country = $row['country'];
+  $this->duration = $row['duration'];
  }
   
  // update the product
@@ -111,7 +118,13 @@ class Data{
      movie_id = :id, 
      title = :title, 
      release_year = :year, 
-     release_date = :date
+     release_date = :date,
+	 photos = :photos,
+	 videos = :videos,
+	 imdb_rating = :rating,
+	 movie_language = :language,
+	 country = :country,
+	 duration = :duration
     WHERE
      movie_id = :id";
  
@@ -122,6 +135,11 @@ class Data{
   $stmt->bindParam(':year', $this->year);
   $stmt->bindParam(':date', $this->date);
   $stmt->bindParam(':photos', $this->photos);
+  $stmt->bindParam(':videos', $this->videos);
+  $stmt->bindParam(':rating', $this->rating);
+  $stmt->bindParam(':language', $this->language);
+  $stmt->bindParam(':country', $this->country);
+  $stmt->bindParam(':duration', $this->duration);
    
   // execute the query
   if($stmt->execute()){
