@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>Welcome to Movie Database</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -137,10 +137,7 @@
           <img class="img-circle" src="movie.jpg" alt="Generic placeholder image"  width="140" height="140">
           <h2>Movies</h2>
           <p>Find movie information here.</p>
-          <p><a class="btn btn-default" href="test3.php" role="button">View All Movies &raquo;</a></p>
-		  <form class="navbar-form navbar-right" action="test1.php" method="post">
-            <input type="text" class="form-control" placeholder="Search..." name="name">
-          </form>
+          <p><a class="btn btn-default" href="movie.php" role="button">View All Movies &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="actors.jpg" alt="Generic placeholder image" width="140" height="140">

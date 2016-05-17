@@ -16,7 +16,7 @@
   
  // delete the product
  if($product->delete()){
-  echo "<script>location.href='test3.php'</script>";
+  echo "<script>location.href='movie.php'</script>";
  }
   
  // if unable to delete the product
