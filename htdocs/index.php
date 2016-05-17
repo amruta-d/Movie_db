@@ -146,7 +146,7 @@
           <img class="img-circle" src="actors.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Actors</h2>
           <p>Find actor information here.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="actors.php" role="button">View All Persons &raquo;</a></p>
 		  
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">

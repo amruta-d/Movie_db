@@ -6,12 +6,12 @@ $records_per_page = 10;
 $from_record_num = ($records_per_page * $page) - $records_per_page;
  
 include_once 'includes/config.php';
-include_once 'includes/data.inc.php';
+include_once 'includes/actors.inc.php';
  
 $database = new Config();
 $db = $database->getConnection();
  
-$product = new Data($db);
+$product = new Person($db);
  
 $stmt = $product->readAll($page, $from_record_num, $records_per_page);
 $num = $stmt->rowCount();
@@ -23,7 +23,7 @@ $num = $stmt->rowCount();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data CRUD PDO</title>
+    <title>Actors</title>
  
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,25 +40,26 @@ $num = $stmt->rowCount();
 </p>
     <div class="container">
       <p>
- <a class="btn btn-primary" href="add.php" role="button">Add Data</a>
+ <a class="btn btn-primary" href="persons_add.php" role="button">Add Person</a>
       </p>
 <?php
 if($num>0){
 ?>
  <table class="table table-bordered table-hover table-striped">
- <caption>All movies in our Movie Database</caption>
+ <caption>All Persons in our Movie Database</caption>
  <thead>
   <tr>
-		  <th>Movie Id</th>
-          <th>Title</th>
-          <th>Release Year</th>
-          <th>Release Date</th>
+		  <th>Person Id</th>
+          <th>Last Name</th>
+          <th>Middle Name</th>
+          <th>First Name</th>
           <th>Photos</th>
-          <th>Videos</th>
-		  <th>Rating</th>
-		  <th>Language</th>
-		  <th>Country</th>
-		  <th>Duration</th>
+          <th>Date of Birth</th>
+		  <th>Birth Place</th>
+		  <th>Current Residence</th>
+		  <th>Description</th>
+		  <th>Active Status</th>
+		  <th>Marital Status</th>
         </tr>
  </thead>
  <tbody>
@@ -67,19 +68,20 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 extract($row);
 ?>
 <tr>
- <?php echo "<td>{$movie_id}</td>" ?>
- <?php echo "<td>{$title}</td>" ?>
- <?php echo "<td>{$release_year}</td>" ?>
- <?php echo "<td>{$release_date}</td>" ?>
- <?php echo "<td>{$photos}</td>" ?>
- <?php echo "<td>{$videos}</td>" ?>
- <?php echo "<td>{$imdb_rating}</td>" ?>
- <?php echo "<td>{$movie_language}</td>" ?>
- <?php echo "<td>{$country}</td>" ?>
- <?php echo "<td>{$duration}</td>" ?>
+ <?php echo "<td>{$person_id}</td>" ?>
+ <?php echo "<td>{$last_name}</td>" ?>
+ <?php echo "<td>{$middle_name}</td>" ?>
+ <?php echo "<td>{$first_name}</td>" ?>
+ <?php echo "<td>{$photo}</td>" ?>
+ <?php echo "<td>{$dob}</td>" ?>
+ <?php echo "<td>{$birth_place}</td>" ?>
+ <?php echo "<td>{$current_residence}</td>" ?>
+ <?php echo "<td>{$description}</td>" ?>
+ <?php echo "<td>{$active_status}</td>" ?>
+ <?php echo "<td>{$marital_status}</td>" ?>
  <?php echo "<td width='100px'>
-     <a class='btn btn-warning btn-sm' href='update.php?id={$movie_id}' role='button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
-     <a class='btn btn-danger btn-sm' href='delete.php?id={$movie_id}' role='button'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>
+     <a class='btn btn-warning btn-sm' href='persons_update.php?id={$person_id}' role='button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
+     <a class='btn btn-danger btn-sm' href='persons_delete.php?id={$person_id}' role='button'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>
           </td>" ?>
 </tr>
 <?php
@@ -88,7 +90,7 @@ extract($row);
  </tbody>
       </table>
 <?php
-$page_dom = "test3.php";
+$page_dom = "actors.php";
 include_once 'includes/pagination.inc.php';
 }
 else{

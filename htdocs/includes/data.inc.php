@@ -26,10 +26,9 @@ class Data{
  function create(){
    
   //write query
-  $query = "INSERT INTO " . $this->table_name . "(movie_id,title,release_year,release_date,photos,videos,imdb_rating,movie_language,country,duration) " . " values('',?,?,?,?,?,?,?,?,?)";
-   
+ // $query = "INSERT INTO " . $this->table_name . " values('',?,?,?,?,?,?,?,?,?)";
+ $query = "INSERT INTO movie (title,  release_year, release_date, photos, videos, imdb_rating, movie_language, country, duration) values(?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
   $stmt = $this->conn->prepare($query);
- 
   $stmt->bindParam(1, $this->title);
   $stmt->bindParam(2, $this->year);
   $stmt->bindParam(3, $this->date);
