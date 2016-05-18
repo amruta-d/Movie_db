@@ -40,7 +40,7 @@ $num = $stmt->rowCount();
 </p>
     <div class="container">
       <p>
- <a class="btn btn-primary" href="persons_add.php" role="button">Add Person</a>
+ <a class="btn btn-primary" href="person_add.php" role="button">Add Person</a>
       </p>
 <?php
 if($num>0){
@@ -60,6 +60,8 @@ if($num>0){
 		  <th>Description</th>
 		  <th>Active Status</th>
 		  <th>Marital Status</th>
+		  <th>Spouse Name</th>
+		  <th>Gender</th>
         </tr>
  </thead>
  <tbody>
@@ -79,6 +81,8 @@ extract($row);
  <?php echo "<td>{$description}</td>" ?>
  <?php echo "<td>{$active_status}</td>" ?>
  <?php echo "<td>{$marital_status}</td>" ?>
+ <?php echo "<td>{$spouse_name}</td>" ?>
+ <?php echo "<td>{$gender}</td>" ?>
  <?php echo "<td width='100px'>
      <a class='btn btn-warning btn-sm' href='persons_update.php?id={$person_id}' role='button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
      <a class='btn btn-danger btn-sm' href='persons_delete.php?id={$person_id}' role='button'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>

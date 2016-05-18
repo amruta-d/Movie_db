@@ -17,6 +17,8 @@ class Person{
  public $des;
  public $active;
  public $marital;
+ public $spouse;
+ public $gender;
 	
   
  public function __construct($db){
@@ -28,7 +30,8 @@ class Person{
    
   //write query
  // $query = "INSERT INTO " . $this->table_name . " values('',?,?,?,?,?,?,?,?,?)";
- $query = "INSERT INTO person (last_name,middle_name,first_name,photo,dob,birth_place,current_residence,description,active_status,marital_status) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
+ $query = "INSERT INTO person (last_name,middle_name,first_name,photo,dob,birth_place,current_residence,description,active_status,marital_status, spouse_name, gender) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
+
   $stmt = $this->conn->prepare($query);
   $stmt->bindParam(1, $this->last);
   $stmt->bindParam(2, $this->middle);
@@ -37,9 +40,11 @@ class Person{
   $stmt->bindParam(5, $this->dob);
   $stmt->bindParam(6, $this->birthplace);
   $stmt->bindParam(7, $this->curr);
-  $stmt->bindParam(7, $this->des);
-  $stmt->bindParam(8, $this->active);
-  $stmt->bindParam(9, $this->marital);
+  $stmt->bindParam(8, $this->des);
+  $stmt->bindParam(9, $this->active);
+  $stmt->bindParam(10, $this->marital);
+  $stmt->bindParam(11, $this->spouse);
+  $stmt->bindParam(12, $this->gender);
    
   if($stmt->execute()){
    return true;
@@ -109,6 +114,8 @@ class Person{
   $this->des = $row['description'];
   $this->active = $row['active_status'];
   $this->marital = $row['marital_status'];
+  $this->spouse = $row['spouse_name'];
+  $this->gender = $row['gender'];
  }
   
  // update the product
@@ -127,7 +134,9 @@ class Person{
 	 current_residence = :curr,
 	 description = :des,
 	 active_status = :active,
-	 marital_status = :marital
+	 marital_status = :marital,
+	 spouse_name = :spouse,
+	 gender = :gender
     WHERE
      person_id = :id";
  
@@ -144,6 +153,8 @@ class Person{
   $stmt->bindParam(':des', $this->des);
   $stmt->bindParam(':active', $this->active);
   $stmt->bindParam(':marital', $this->marital);
+  $stmt->bindParam(':spouse', $this->spouse);
+  $stmt->bindParam(':gender', $this->gender);
    
   // execute the query
   if($stmt->execute()){

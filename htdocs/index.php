@@ -150,10 +150,8 @@
           <img class="img-circle" src="companies.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Companies</h2>
           <p>Find company information here.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-		  <form class="navbar-form navbar-right" action="test1.php" method="post">
-            <input type="text" class="form-control" placeholder="Search..." name="name">
-          </form>
+          <p><a class="btn btn-default" href="#" role="button">View All Companies &raquo;</a></p>
+
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 

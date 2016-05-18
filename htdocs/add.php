@@ -30,7 +30,7 @@ $product = new Data($db);
 </p>
     <div class="container">
       <p>
- <a class="btn btn-primary" href="test3.php" role="button">Back View Data</a>
+ <a class="btn btn-primary" href="movie.php" role="button">Back View Data</a>
       </p>
  
 <?php

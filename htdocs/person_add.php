@@ -1,16 +1,11 @@
 <?php
 include_once 'includes/config.php';
  
-$id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: missing ID.');
- 
 $database = new Config();
 $db = $database->getConnection();
  
 include_once 'includes/actors.inc.php';
-$product = new Person($db);
- 
-$product->id = $id;
-$product->readOne();
+$person = new Person($db);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +13,7 @@ $product->readOne();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Movie Information</title>
+    <title>Add New Person to Movie Database</title>
  
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,22 +36,25 @@ $product->readOne();
 <?php
 if($_POST){
  
- $product->last = $_POST['last'];
- $product->middle = $_POST['middle'];
- $product->first = $_POST['first'];
- $product->photo = $_POST['photo'];
- $product->dob = $_POST['dob'];
- $product->birthplace = $_POST['birthplace'];
- $product->curr = $_POST['curr'];
- $product->des = $_POST['des'];
- $product->active = $_POST['active'];
- $product->marital = $_POST['marital'];
- $product->spouse = $_POST['spouse'];
- $product->gender = $_POST['gender'];
+ $person->last = $_POST['last'];
+ $person->middle = $_POST['middle'];
+ $person->first = $_POST['first'];
+ $person->photo = $_POST['photo'];
+ $person->dob = $_POST['dob'];
+ $person->birthplace = $_POST['birthplace'];
+ $person->curr = $_POST['curr'];
+ $person->des = $_POST['des'];
+ $person->active = $_POST['active'];
+ $person->marital = $_POST['marital'];
+ $person->spouse = $_POST['spouse'];
+ $person->gender = $_POST['gender'];
   
- if($product->update()){
+ if($person->create()){
 ?>
-<script>window.location.href='actors.php'</script>
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+  <strong>Success!</strong> Anda Berhasil, <a href="index.php">View Data</a>.
+</div>
 <?php
  }else{
 ?>
@@ -71,51 +69,51 @@ if($_POST){
 <form method="post">
   <div class="form-group">
     <label for="last">Last Name</label>
-    <input type="text" class="form-control" id="last" name="last" value='<?php echo $product->last; ?>'>
+    <input type="text" class="form-control" id="last" name="last">
   </div>
   <div class="form-group">
     <label for="middle">Middle Name</label>
-    <input type="text" class="form-control" id="middle" name="middle" value='<?php echo $product->middle; ?>'>
+    <input type="text" class="form-control" id="middle" name="middle">
   </div>
   <div class="form-group">
     <label for="first">First Name</label>
-    <input type="text" class="form-control" id="first" name="first" value='<?php echo $product->first; ?>'>
+    <input type="text" class="form-control" id="first" name="first">
   </div>
-  <div class="form-group">
+    <div class="form-group">
     <label for="photo">Photos</label>
-    <textarea class="form-control" rows="2" id="photo" name="photo"><?php echo $product->photo; ?></textarea>
+    <input type="text" class="form-control" id="photo" name="photo">
   </div>
-  <div class="form-group">
+    <div class="form-group">
     <label for="dob">Date of Birth</label>
-    <textarea class="form-control" rows="2" id="dob" name="dob"><?php echo $product->dob; ?></textarea>
+    <input type="text" class="form-control" id="dob" name="dob">
   </div>
   <div class="form-group">
     <label for="birthplace">Birth Place</label>
-    <input type="text" class="form-control" id="birthplace" name="birthplace" value='<?php echo $product->birthplace; ?>'>
+    <input type="text" class="form-control" id="birthplace" name="birthplace">
   </div>
-  <div class="form-group">
+    <div class="form-group">
     <label for="curr">Current Residence</label>
-    <input type="text"  class="form-control" id="curr" name="curr" value='<?php echo $product->curr; ?>'>
+    <input type="text" class="form-control"  id="curr" name="curr">
   </div>
-  <div class="form-group">
+    <div class="form-group">
     <label for="des">Description</label>
-    <input type="text"  class="form-control" id="des" name="des" value='<?php echo $product->des; ?>'>
+    <input type="text" class="form-control"  id="des" name="des">
   </div>
-  <div class="form-group">
+    <div class="form-group">
     <label for="active">Active Status</label>
-    <input type="text"  class="form-control" id="active" name="active" value='<?php echo $product->active; ?>'>
+    <input type="text" class="form-control"  id="active" name="active">
   </div>
-  <div class="form-group">
+    <div class="form-group">
     <label for="marital">Marital Status</label>
-    <input type="text"  class="form-control" id="marital" name="marital" value='<?php echo $product->marital; ?>'>
+    <input type="text" class="form-control" id="marital" name="marital">
   </div>
-    <div class="form-group">
+      <div class="form-group">
     <label for="spouse">Spouse Name</label>
-    <input type="text"  class="form-control" id="spouse" name="spouse" value='<?php echo $product->spouse; ?>'>
+    <input type="text" class="form-control" id="spouse" name="spouse">
   </div>
-    <div class="form-group">
+      <div class="form-group">
     <label for="gender">Gender</label>
-    <input type="text"  class="form-control" id="gender" name="gender" value='<?php echo $product->gender; ?>'>
+    <input type="text" class="form-control" id="gender" name="gender">
   </div>
   <button type="submit" class="btn btn-success">Submit</button>
 </form>
