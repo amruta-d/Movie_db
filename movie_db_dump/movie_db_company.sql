@@ -35,7 +35,7 @@ CREATE TABLE `company` (
 
 LOCK TABLES `company` WRITE;
 /*!40000 ALTER TABLE `company` DISABLE KEYS */;
-INSERT INTO `company` VALUES (1,'A24\r'),(2,'Alfran Productions\r'),(3,'Amblin Entertainment\r'),(4,'Atman Entertainment\r'),(5,'Blumhouse Productions\r'),(6,'Bold Films\r'),(7,'Bulletproof Cupid\r'),(8,'Canal Plus\r'),(9,'Castle Rock Entertainment\r'),(10,'Cecchi Gori Group Tiger Cinematografica\r'),(11,'Chaocorp\r'),(12,'CinéCinéma\r'),(13,'DC Comics\r'),(14,'Disney\r'),(15,'Duperele Films\r'),(16,'Element Pictures\r'),(17,'Fox 2000 Pictures\r'),(18,'Gaumont\r'),(19,'Knickerbocker Films\r'),(20,'Legendary Pictures\r'),(21,'Linson Films\r'),(22,'Lynda Obst Productions\r'),(23,'Marvel Enterprises\r'),(24,'Marvel Studios\r'),(25,'Melampo Cinematografica\r'),(26,'Moving Picture Company (MPC)\r'),(27,'Nibariki\r'),(28,'\"Nippon Television Network (NTV),\"\r\n29,No Trace Camping\r\n30,Orion-Nova Productions\r\n31,Paramount Pictures\r\n32,Pixar Animation Studios\r\n33,Quad Productions\r\n34,Regency Enterprises\r\n35,Revolution Sun Studios\r\n36,Right of Way Films\r\n37,Shinchosha Company\r\n38');
+INSERT INTO `company` VALUES (1,'A24'),(2,'Alfran Productions'),(3,'Amblin Entertainment'),(4,'Atman Entertainment'),(5,'Blumhouse Productions'),(6,'Bold Films'),(7,'Bulletproof Cupid'),(8,'Canal Plus'),(9,'Castle Rock Entertainment'),(10,'Cecchi Gori Group Tiger Cinematografica'),(11,'Chaocorp'),(12,'CinéCinéma'),(13,'DC Comics'),(14,'Disney'),(15,'Duperele Films'),(16,'Element Pictures'),(17,'Fox 2000 Pictures'),(18,'Gaumont'),(19,'Knickerbocker Films'),(20,'Legendary Pictures'),(21,'Linson Films'),(22,'Lynda Obst Productions'),(23,'Marvel Enterprises'),(24,'Marvel Studios'),(25,'Melampo Cinematografica'),(26,'Moving Picture Company (MPC)'),(27,'Nibariki'),(28,'Nippon Television Network (NTV),'),(29,'No Trace Camping'),(30,'Orion-Nova Productions'),(31,'Paramount Pictures'),(32,'Pixar Animation Studios'),(33,'Quad Productions'),(34,'Regency Enterprises'),(35,'Revolution Sun Studios'),(36,'Right of Way Films'),(37,'Shinchosha Company'),(38,'Studio Ghibli'),(39,'Syncopy'),(40,'Taurus Film'),(41,'Ten Films'),(42,'TF1'),(43,'TF1 Films Production'),(44,'The Coppola Company'),(45,'Universal Pictures'),(46,'Walt Disney Animation Studios'),(47,'Walt Disney Pictures'),(48,'Warner Bros.'),(49,'Lucas Film'),(50,'Bad Robot'),(51,'Appian Way'),(52,'Lionsgate');
 /*!40000 ALTER TABLE `company` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-17 21:55:22
+-- Dump completed on 2016-05-18 23:06:59

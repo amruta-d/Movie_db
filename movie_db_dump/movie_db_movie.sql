@@ -34,7 +34,7 @@ CREATE TABLE `movie` (
   `country` char(255) DEFAULT NULL,
   `duration` double DEFAULT NULL,
   PRIMARY KEY (`movie_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-17 21:55:22
+-- Dump completed on 2016-05-18 23:06:59
