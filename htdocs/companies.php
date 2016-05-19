@@ -6,12 +6,12 @@ $records_per_page = 10;
 $from_record_num = ($records_per_page * $page) - $records_per_page;
  
 include_once 'includes/config.php';
-include_once 'includes/actors.inc.php';
+include_once 'includes/company.inc.php';
  
 $database = new Config();
 $db = $database->getConnection();
  
-$product = new Person($db);
+$product = new Company($db);
  
 $stmt = $product->readAll($page, $from_record_num, $records_per_page);
 $num = $stmt->rowCount();
@@ -23,7 +23,7 @@ $num = $stmt->rowCount();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Actors</title>
+    <title>Production Companies</title>
  
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,28 +40,17 @@ $num = $stmt->rowCount();
 </p>
     <div class="container">
       <p>
- <a class="btn btn-primary" href="person_add.php" role="button">Add Person</a>
+ <a class="btn btn-primary" href="company_add.php" role="button">Add Company</a>
       </p>
 <?php
 if($num>0){
 ?>
  <table class="table table-bordered table-hover table-striped">
- <caption>All Persons in our Movie Database</caption>
+ <caption>All Production Companies in our Movie Database</caption>
  <thead>
   <tr>
-		  <th>Person Id</th>
-          <th>Last Name</th>
-          <th>Middle Name</th>
-          <th>First Name</th>
-          <th>Photos</th>
-          <th>Date of Birth</th>
-		  <th>Birth Place</th>
-		  <th>Current Residence</th>
-		  <th>Description</th>
-		  <th>Active Status</th>
-		  <th>Marital Status</th>
-		  <th>Spouse Name</th>
-		  <th>Gender</th>
+		  <th>Production Company Id</th>
+          <th>Production Company Name</th>
         </tr>
  </thead>
  <tbody>
@@ -70,22 +59,12 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 extract($row);
 ?>
 <tr>
- <?php echo "<td>{$person_id}</td>" ?>
- <?php echo "<td>{$last_name}</td>" ?>
- <?php echo "<td>{$middle_name}</td>" ?>
- <?php echo "<td>{$first_name}</td>" ?>
- <?php echo "<td>{$photo}</td>" ?>
- <?php echo "<td>{$dob}</td>" ?>
- <?php echo "<td>{$birth_place}</td>" ?>
- <?php echo "<td>{$current_residence}</td>" ?>
- <?php echo "<td>{$description}</td>" ?>
- <?php echo "<td>{$active_status}</td>" ?>
- <?php echo "<td>{$marital_status}</td>" ?>
- <?php echo "<td>{$spouse_name}</td>" ?>
- <?php echo "<td>{$gender}</td>" ?>
+ <?php echo "<td>{$company_id}</td>" ?>
+ <?php echo "<td>{$company_name}</td>" ?>
+
  <?php echo "<td width='100px'>
-     <a class='btn btn-warning btn-sm' href='persons_update.php?id={$person_id}' role='button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
-     <a class='btn btn-danger btn-sm' href='person_delete.php?id={$person_id}' role='button'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>
+     <a class='btn btn-warning btn-sm' href='company_update.php?id={$company_id}' role='button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
+     <a class='btn btn-danger btn-sm' href='company_delete.php?id={$company_id}' role='button'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>
           </td>" ?>
 </tr>
 <?php
@@ -94,7 +73,7 @@ extract($row);
  </tbody>
       </table>
 <?php
-$page_dom = "actors.php";
+$page_dom = "companies.php";
 include_once 'includes/pagination.inc.php';
 }
 else{

@@ -45,7 +45,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Project name</a>
+              <a class="navbar-brand" href="#">Movie Database</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -53,7 +53,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Database <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Action</a></li>
                     <li><a href="#">Another action</a></li>
@@ -148,9 +148,9 @@
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="companies.jpg" alt="Generic placeholder image" width="140" height="140">
-          <h2>Companies</h2>
-          <p>Find company information here.</p>
-          <p><a class="btn btn-default" href="#" role="button">View All Companies &raquo;</a></p>
+          <h2>Production Companies</h2>
+          <p>Find production company information here.</p>
+          <p><a class="btn btn-default" href="companies.php" role="button">View All Production Companies &raquo;</a></p>
 
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
